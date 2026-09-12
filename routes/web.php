@@ -13,9 +13,7 @@ Route::prefix('/user')->group(function () {
 
 //admin route
 Route::prefix('/admin')->group(function () {
-    Route::get('/', function () {
-        return view('admin');
-    })->name('adminHome');
+    Route::get('/',[\App\Http\Controllers\Admin\adminController::class,'index'])->name('adminHome');
 });
 
 //eror page
