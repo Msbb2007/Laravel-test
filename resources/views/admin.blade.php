@@ -7,5 +7,8 @@
 </head>
 <body>
 <h1>welcome admin</h1>
+<h2>
+    {{$string}}
+</h2>
 </body>
 </html>
