@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\adminController;
 use Illuminate\Support\Facades\Route;
 
 //Rout testing
@@ -13,7 +14,9 @@ Route::prefix('/user')->group(function () {
 
 //admin route
 Route::prefix('/admin')->group(function () {
-    Route::get('/',[\App\Http\Controllers\Admin\adminController::class,'index'])->name('adminHome');
+    Route::get('/',[adminController::class,'index'])->name('adminHome');
+    Route::get('/user/create',[adminController::class,'create'])->name('admin.users.create');
+    Route::post('/user/store',[adminController::class,'saveUser'])->name('admin.save-user');
 });
 
 //eror page
