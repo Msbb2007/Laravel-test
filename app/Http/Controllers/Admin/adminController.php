@@ -18,7 +18,11 @@ class adminController extends Controller
 
     public function saveUser(Request $request)
     {
-        User::create([$request->all()]);
+        User::query()->create([
+            'name' => $request->name,
+            'email' => $request->email,
+            'password' => Hash::make($request->password)
+        ]);
         return redirect('admin');
     }
 
