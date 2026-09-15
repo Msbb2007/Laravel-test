@@ -21,6 +21,8 @@ Route::prefix('/admin')->group(function () {
     Route::put('/user/{id}/update',[adminController::class,'update'])->name('admin.users.update');
     Route::get('/user/deleted_users',[adminController::class,'deleted_users'])->name('admin.users.deleted_users');
     Route::delete('/user/{id}/delete',[adminController::class,'softDelete'])->name('admin.users.softDelete');
+    Route::put('/user/{id}/restore',[adminController::class,'restore'])->name('admin.users.restore');
+    Route::delete('/user/{id}/hard_delete',[adminController::class,'hard_delete'])->name('admin.users.hard_delete');
 });
 
 //eror page
