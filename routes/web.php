@@ -17,6 +17,10 @@ Route::prefix('/admin')->group(function () {
     Route::get('/',[adminController::class,'index'])->name('adminHome');
     Route::get('/user/create',[adminController::class,'create'])->name('admin.users.create');
     Route::post('/user/store',[adminController::class,'saveUser'])->name('admin.save-user');
+    Route::get('/user/{id}/edit',[adminController::class,'edit'])->name('admin.users.edit');
+    Route::put('/user/{id}/update',[adminController::class,'update'])->name('admin.users.update');
+    Route::get('/user/deleted_users',[adminController::class,'deleted_users'])->name('admin.users.deleted_users');
+    Route::delete('/user/{id}/delete',[adminController::class,'softDelete'])->name('admin.users.softDelete');
 });
 
 //eror page
