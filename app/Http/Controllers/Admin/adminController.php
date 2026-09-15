@@ -26,4 +26,24 @@ class adminController extends Controller
         return redirect('admin');
     }
 
+    public function deleted_users()
+    {
+
+    }
+
+    public function update(string $id)
+    {
+
+    }
+
+    public function edit(string $id)
+    {
+
+    }
+
+    public function softDelete(string $id)
+    {
+
+    }
+
 }
