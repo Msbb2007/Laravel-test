@@ -36,4 +36,9 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
+    public function tasks(): \Illuminate\Database\Eloquent\Relations\BelongsToMany
+    {
+       return $this->belongsToMany(Task::class, 'task_assignment', 'user_id', 'task_id');
+    }
 }
