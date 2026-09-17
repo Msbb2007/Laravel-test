@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Task;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
@@ -52,7 +53,8 @@ class adminController extends Controller
     public function edit(string $id)
     {
         $user = User::query()->find($id);
-        return view('admin.users.edit', compact('user'));
+        $tasks=$user->tasks()->get();
+        return view('admin.users.edit', compact('user', 'tasks'));
     }
 
     public function softDelete(string $id)

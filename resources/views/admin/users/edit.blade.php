@@ -23,6 +23,7 @@
                 <div class="mb-3">
                     <label class="form-label">رمز عبور جدید (اختیاری)</label>
                     <input type="password" name="password" class="form-control" placeholder="اگر نمی‌خواهید تغییر کند، خالی بگذارید">
+                    <p>{{$tasks}}</p>
                 </div>
 
 
